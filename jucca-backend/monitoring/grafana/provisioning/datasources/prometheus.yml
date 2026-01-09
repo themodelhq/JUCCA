@@ -1,0 +1,33 @@
+# Grafana Datasource Configuration
+# Auto-provisioned when container starts
+
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false
+    
+    # Basic auth (if enabled)
+    basicAuth: false
+    basicAuthUser: admin
+    
+    # JSON Data for additional configuration
+    jsonData:
+      timeInterval: "5s"
+      httpMode: "GET"
+      
+    # Secure JSON Data (for credentials)
+    secureJsonData:
+      # Add API keys here if needed
+      pass: ""
+      user: ""
+      
+    # Version (for migration)
+    version: 1
+    
+    # UID (unique identifier)
+    uid: prometheus-jucca
