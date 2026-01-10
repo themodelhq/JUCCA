@@ -1,1 +1,0 @@
-# JUCCA Backend Application Package
